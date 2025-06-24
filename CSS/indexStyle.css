@@ -1,0 +1,30 @@
+ .custom-btn {
+      background-color: #fff;
+      color: #000;
+      border: 2px solid #000;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .custom-btn:hover {
+      background-color: #000;
+      color: #fff;
+    }
+
+    .feature-box, .rating-box {
+      padding: 20px;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      background-color: #f8f9fa;
+      height: 100%;
+    }
+    
+    .bg-black {
+      background-color: #000 !important;
+    }
+    
+    .hero img {
+      object-fit: cover;
+      height: 100%;
+      max-height: 400px;
+      min-height: 300px;
+    }
