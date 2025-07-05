@@ -16,7 +16,7 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
-<body class="bg-black text-white">
+<body class="bg-black text-white d-flex flex-column min-vh-100">
 
   <!-- Header -->
   <header class="bg-dark text-white">
@@ -33,7 +33,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-           <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
             <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
@@ -42,63 +42,94 @@
       </div>
     </nav>
   </header>
-  <!-- End of Header -->
-
-  <!-- Main Login Section -->
-  <main class="py-5">
-    <div class="container">
-      <h1 class="text-center mb-5">Register</h1>
-      <div class="row justify-content-center">
-        <div class="col-md-6">
-          <div class="p-4 bg-dark rounded shadow">
-            <form method="post" action="#">
-             <div class="mb-3">
-                <label for="Name" class="form-label text-white">Name</label>
-                <input type="text" class="form-control" id="Name" name="Name" required />
-              </div>
-              <div class="mb-3">
-                <label for="Email" class="form-label text-white">Email</label>
-                <input type="email" class="form-control" id="Email" name="email" required />
-              </div>
-               <div class="mb-3">
-                <label for="Phone" class="form-label text-white">Phone</label>
-                <input type="tel" class="form-control" id="Phone" name="Phone" required />
-              </div>
-              <div class="mb-3">
-                <label for="Password" class="form-label text-white">Password</label>
-                <input type="password" class="form-control" id="Password" name="password" required />
-              </div>
-              <div class="mb-3">
-                <label for="ConfirmPassword" class="form-label text-white">ConfirmPassword</label>
-                <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" required />
-              </div>
-              <button type="submit" class="btn btn-outline-light w-100">Create Account</button>
-            </form>
-            <div class="mt-3">
-              <small>already have an account? <a href="Login.html" class="text-decoration-underline text-info">Login now</a></small>
+<!-- Main Register Section -->
+<main class="py-5 flex-fill">
+  <div class="container">
+    <h1 class="text-center mb-5">Register</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="p-4 bg-dark rounded shadow">
+          <form method="post" id="RegisterForm" enctype="multipart/form-data" novalidate>
+            <!-- Full Name -->
+            <div class="mb-3">
+              <label for="Name" class="form-label">Full Name</label>
+              <input type="text" class="form-control" id="Name" name="name" required pattern="[A-Za-z\s]+" minlength="2" maxlength="50" />
+              <div class="invalid-feedback">Enter a valid full name (letters and spaces only).</div>
             </div>
+
+            <!-- Email -->
+            <div class="mb-3">
+              <label for="Email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="Email" name="email" required minlength="5" maxlength="100" />
+              <div class="invalid-feedback">Enter a valid email address.</div>
+            </div>
+
+            <!-- Phone -->
+            <div class="mb-3">
+              <label for="Phone" class="form-label">Phone Number</label>
+              <input type="tel" class="form-control" id="Phone" name="phone" pattern="[0-9+\-\s()]{10,15}" />
+              <div class="invalid-feedback">Enter a valid phone number.</div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3">
+              <label for="Password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="Password" name="password" required minlength="8" maxlength="50" />
+              <div class="invalid-feedback">Password must be at least 8 characters long.</div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="mb-3">
+              <label for="ConfirmPassword" class="form-label">Confirm Password</label>
+              <input type="password" class="form-control" id="ConfirmPassword" name="confirmPassword" required minlength="8" maxlength="50" />
+              <div class="invalid-feedback">Passwords do not match.</div>
+            </div>
+
+            <!-- Profile Image -->
+            <div class="mb-3">
+              <label for="ProfileImage" class="form-label">Profile Image</label>
+              <input type="file" class="form-control" id="ProfileImage" name="image" accept="image/png, image/jpeg, image/jpg, image/gif" />
+              <div class="form-text">Accepted formats: PNG, JPG, JPEG, GIF. Max 2MB.</div>
+              <div class="invalid-feedback">Please upload a valid image file.</div>
+            </div>
+
+            <!-- Terms & Conditions -->
+            <div class="form-check mb-3">
+              <input class="form-check-input" type="checkbox" id="TermsCheck" required />
+              <label class="form-check-label" for="TermsCheck">
+                I agree to the <a href="#" class="text-info text-decoration-underline">Terms and Conditions</a>
+              </label>
+              <div class="invalid-feedback">You must agree before submitting.</div>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" id="RegisterBtn" class="btn btn-outline-light w-100 mt-3">Create Account</button>
+          </form>
+
+          <div class="mt-3 text-center">
+            <small>Already have an account? <a href="Login.html" class="text-info text-decoration-underline">Login now</a></small>
           </div>
         </div>
       </div>
     </div>
-  </main>
-  <!-- End of Main -->
+  </div>
+</main>
+
 
   <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-4 mt-auto">
+  <footer class="bg-dark text-white text-center py-4">
     <div class="container">
       <p class="mb-2">&copy; 2034 Food Pyramid. All rights reserved.</p>
       <div class="social-icons">
         <a href="https://www.facebook.com" class="text-white me-3" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
         <a href="https://www.twitter.com" class="text-white me-3" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         <a href="https://www.instagram.com" class="text-white me-3" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.google.com/maps?q=30.0444,31.2357" target="_blank" class="text-white me-3" aria-label="Location on Google Maps">
+        <a href="https://www.google.com/maps?q=30.0444,31.2357" target="_blank" class="text-white me-3" aria-label="Google Maps Location">
           <i class="fa-solid fa-map-location-dot"></i>
         </a>
       </div>
     </div>
   </footer>
-  <!-- End Footer -->
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

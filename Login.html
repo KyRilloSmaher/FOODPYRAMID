@@ -54,7 +54,7 @@
       <div class="row justify-content-center">
         <div class="col-md-6">
           <div class="p-4 bg-dark rounded shadow">
-            <form method="post" action="#">
+            <form method="get"  LoginForm id="LoginForm">
               <div class="mb-3">
                 <label for="Email" class="form-label text-white">Email</label>
                 <input type="email" class="form-control" id="Email" name="email" required />
@@ -63,10 +63,10 @@
                 <label for="Password" class="form-label text-white">Password</label>
                 <input type="password" class="form-control" id="Password" name="password" required />
               </div>
-              <button type="submit" class="btn btn-outline-light w-100">Login</button>
+              <button type="submit" id ="LoginBtn"class="btn btn-outline-light w-100">Login</button>
             </form>
             <div class="mt-3">
-              <small>Forgot password? <a href="ForgetPassword.html" class="text-decoration-underline text-info">Reset</a></small><br>
+              <!-- <small>Forgot password? <a href="ForgetPassword.html" class="text-decoration-underline text-info">Reset</a></small><br> -->
               <small>Don't have an account? <a href="Register.html" class="text-decoration-underline text-info">Register now</a></small>
             </div>
           </div>

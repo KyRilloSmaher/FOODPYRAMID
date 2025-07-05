@@ -4,9 +4,7 @@
   
 
     function setnavbar() {
-        console.log("iam in");
      if (!isLoginIn) {
-         console.log("iam in 2");
        ProfileLink.style.display="none";
        LoginLink.style.display="block";
       
