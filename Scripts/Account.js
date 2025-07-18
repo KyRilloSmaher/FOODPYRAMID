@@ -89,8 +89,8 @@ function initUploadImageButton() {
         formData.append("image", file);
 
         try {
-          const uploadResponse = await fetch(`${API}/upload`, {
-            method: "POST",
+          const uploadResponse = await fetch(`${API}/clients/${clientId}`, {
+            method: "PUT",
             body: formData,
           });
 
@@ -123,7 +123,7 @@ function initSaveChangesButton() {
       name: inputUsername.value,
       email: inputEmailAddress.value,
       phone: inputPhone.value,
-      birthday: inputBirthday.value
+
     };
 
     try {

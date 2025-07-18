@@ -38,10 +38,11 @@ function validatePhone(phone) {
 }
 
 function validatePassword(password) {
-  // At least 8 characters, 1 uppercase, 1 lowercase, 1 number
+  // At least 8 characters, 1 uppercase, 1 lowercase, 1 number, 1 Special char
   return password.length >= 8 && 
          /[A-Z]/.test(password) && 
          /[a-z]/.test(password) && 
+         /[@#$%^&!]/.test(password) && 
          /\d/.test(password);
 }
 
@@ -363,6 +364,7 @@ PasswordInput.addEventListener('input', () => {
   if (/[a-z]/.test(password)) strength++;
   if (/[A-Z]/.test(password)) strength++;
   if (/\d/.test(password)) strength++;
+  if (/[@#$%^&!]/.test(password)) strength++;
   
   switch (strength) {
     case 0:
